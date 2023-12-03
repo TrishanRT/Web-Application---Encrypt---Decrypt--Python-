@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-image: url('static/image/newimg2.jpg');
+			
+                background-repeat: no-repeat;
+                background-size: cover;
+				background-position: center;
+				
+				
+				box-sizing: border-box;
+				position: relative;
+                text-align: center;
+                background-attachment: fixed;
+                
+                
+
+			             }
+
+         button{
+            border-radius: 30px;
+            background-color: rgb(255	185	87);
+            color: rgb(2, 2, 2);
+            width: 150px;
+            height: 45px;
+         } 
+         
+         .message{
+            background-color: rgb(255, 255, 255);
+            color: rgb(12, 12, 12);
+            display: contents;
+
+         } 
+         .row{
+            
+            border: 1px solid rgb(255, 255, 255);
+            background-color: rgb(174, 228, 241,0.5);
+            width: 400px;
+            height: 300px;
+            align-items: center;
+            border-radius: 10px;
+            position:absolute;
+            top:50%;
+            left:50%;
+            margin-top:50px;  
+            margin-left:-200px;
+         }    
+         .send-message-link {
+    color: #020303; /* Text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Font size */
+    font-family: Arial, sans-serif; /* Font family */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+  }
+
+  /* Style for the Send Message link on hover */
+  .send-message-link:hover {
+    color: #FF6B6B; /* Change color on hover */
+  }       
+  h2 {
+    font-family: 'Helvetica Neue', sans-serif; /* Modern font family */
+    font-weight: bold;
+    font-size: 32px; /* Adjust font size as needed */
+    color: #333; /* Text color */
+    background-color: #f4f4f4; /* Background color */
+    padding: 10px 20px; /* Padding for some space around the text */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  }   
+    </style>
+		
+
+	<title>Send Message</title>
+
+</head>
+<body>
+	<br><br><br><br><br>
+	<!--<img src="employeeuser1.png" class="rounded mx-auto d-block" width="70px" height="70px">-->
+    
+
+     	
+	<div class ="row">
+		<div class ="col"> </div>
+		<div class="col-4">
+			<h2>Message Encryption</h2>
+	       <form name="frmvalid" method="post" action="{{url_for('Message')}}">
+            
+
+	       	 <!--Full Name <input type="text" id="txtname"  name="txtname" class="form-control" placeholder="Enter full name"><br>-->
+		     <br><input type="text" id="msg"  name="msg" class="form-control" placeholder="Message" style="width: 300px;height: 30px;" required><br>
+		     
+
+              <br><select name="role" id="role" style="width: 300px;height: 30px;">
+                <option value="Admin">Admin</option>
+                <option value="User">User</option>
+                
+                </select>
+                <br>
+                <br>
+                <br>
+                <br>
+		    
+		     
+		<button class="button"  name="btnlogin" >Submit</button><br><br><br><br><br>
+        <a href="{{url_for('Registration')}}"class="send-message-link">Back</a><br><br>
+        <a href="{{url_for('Read')}}"class="send-message-link">View Message</a><br>
+
+        {% if mesage is defined and mesage %}
+               <div class ="message">{{mesage}}</div>
+            {% endif %}
+		
+
+	</form>
+	</div>
+	<div class="col"> </div>
+	</div>
+
+
+</body>
+</html>

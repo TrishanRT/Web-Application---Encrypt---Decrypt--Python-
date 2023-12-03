@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-image: url("newimg2.jpg");
+			
+            background-image: url('static/image/newimg2.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            box-sizing: border-box;
+            position: relative;
+            text-align: center;
+            background-size: cover;
+                
+                
+
+
+			             }
+
+         button{
+            border-radius: 30px;
+            background-color: rgb(255	185	87);
+            color: rgb(10, 10, 10);
+            width: 150px;
+            height: 45px;
+         } 
+         
+         .message{
+            background-color: brown;
+            color: red;
+            display: contents;
+
+         } 
+         .display{
+            color: white;
+            
+            background-color:rgb(4, 11, 77);
+            text-align: center;
+            position: relative;
+            border-radius:10px;
+            
+            
+            
+        
+         } 
+         .msgview{
+            color: brown;
+            font-style:italic;
+            text-align: center;
+            
+         } 
+         .row{
+            
+            border: 1px solid white;
+            background-color: rgba( 174, 228, 241,0.5);
+            width: 400px;
+            height: 350px;
+            align-items: center;
+            border-radius: 10px;
+            position:absolute;
+            top:50%;
+            left:50%;
+            margin-top:50px;  
+            margin-left:-200px;
+         }
+         p[name="msgview"] {
+    color: #ffffff; /* Change to your desired color */
+    /* Add other styles as needed */
+  }   
+  .msgview {
+            color: brown;
+            font-style: italic;
+            text-align: center;
+            margin-top: 20px; /* Add some space between the message and the display area */
+        }
+
+        .display {
+            color: white;
+            background-color: rgb(4, 11, 77);
+            text-align: center;
+            position: relative;
+            border-radius: 10px;
+            margin-top: 10px; /* Add some space between the message and the display area */
+            padding: 10px; /* Add some padding for better visibility */
+        }
+
+        .display output {
+            font-size: 18px; /* Adjust font size as needed */
+        }         
+    </style>
+		
+
+	<title>View Message</title>
+
+</head>
+<body>
+	<br><br><br><br><br>
+	<!--<img src="employeeuser1.png" class="rounded mx-auto d-block" width="70px" height="70px">-->
+    
+
+     	
+	<div class ="row">
+		<div class ="col"> </div>
+		<div class="col-4">
+			<h2>Read Message</h2>
+	       <form name="frmvalid" method="post" action="{{url_for('Read')}}">
+            
+
+	       	 <!--Full Name <input type="text" id="txtname"  name="txtname" class="form-control" placeholder="Enter full name"><br>-->
+		     <br><br><input type="email" id="txtuname"  name="txtuname" class="form-control" placeholder="Email" style="width: 300px;height: 30px;" required><br>
+		     <br><input type="password" id ="txtpw"  name="txtpw"class="form-control" placeholder="Password" style="width: 300px;height: 30px;" required><br>
+		     
+
+              
+                <br>
+                <br>
+                <br>
+                <br>
+		    
+		     
+		<button class="button"  name="btnlogin" >Submit</button><br><br><br><br><br>
+        <div name="msgview">
+            <p name="msgview">Display Message</p>
+        </div>
+        
+        
+        <div class="display"><output type="textarea" name="display">{{Data}}</output></div>
+
+        {% if mesage is defined and mesage %}
+               <div class ="message">{{mesage}}</div>
+            {% endif %}
+
+        
+		
+
+	</form>
+	</div>
+	<div class="col"> </div>
+	</div>
+
+
+</body>
+</html>

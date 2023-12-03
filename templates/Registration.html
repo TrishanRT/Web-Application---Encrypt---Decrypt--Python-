@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            
+			
+            
+            
+            background-image: url('static/image/newimg2.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            box-sizing: border-box;
+            position: relative;
+            text-align: center;
+            background-size: cover;
+            background-attachment: fixed;
+            
+            
+            
+            
+
+
+			             }
+         
+
+         button{
+            border-radius: 30px;
+            background-color: rgb( 	255	185	87);
+            color: rgb(0, 0, 0);
+            width: 150px;
+            height: 45px;
+         } 
+         
+         .message{
+            background-color: rgb(255, 255, 255);
+            color: rgb(255, 255, 255);
+            display: contents;
+
+         }  
+         .row{
+            
+            border: 1px solid white;
+            background-color: rgba(75, 31, 146, 0.5);
+            width: 400px;
+            height: 390px;
+            align-items: center;
+            border-radius: 10px;
+            position:absolute;
+            top:50%;
+            left:50%;
+            margin-top:50px;  
+            margin-left:-200px;
+         }    
+          /* Style for the Send Message link */
+  .send-message-link {
+    color: #020303; /* Text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Font size */
+    font-family: Arial, sans-serif; /* Font family */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+  }
+
+  /* Style for the Send Message link on hover */
+  .send-message-link:hover {
+    color: #FF6B6B; /* Change color on hover */
+  }        
+  /* Style for the Registration heading */
+  .registration-heading {
+    font-size: 24px; /* Adjust font size */
+    font-weight: bold; /* Make the text bold */
+    color: #000000; /* Text color */
+    text-transform: uppercase; /* Convert text to uppercase */
+    letter-spacing: 2px; /* Add letter spacing */
+    margin-bottom: 20px; /* Add some space at the bottom */
+  }
+    </style>
+		
+
+	<title></title>
+
+</head>
+<body background="static/image/newimg.jpg">
+	<br><br><br><br><br>
+	<!--<img src="employeeuser1.png" class="rounded mx-auto d-block" width="70px" height="70px">-->
+    
+
+    	
+	<div class ="row">
+		<div class ="col"> </div>
+		<div class="col-4">
+			<h2 class="registration-heading">Registration</h2>
+	       <form name="frmvalid" method="post" action="{{url_for('Registration')}}">
+            
+
+	       	 <!--Full Name <input type="text" id="txtname"  name="txtname" class="form-control" placeholder="Enter full name"><br>-->
+		     <br><input type="email" id="txtuname"  name="txtuname" class="form-control" placeholder="Email" style="width: 300px;height: 30px;" required><br>
+		     <br><input type="password" id ="txtpw"  name="txtpw"class="form-control" placeholder="Password" style="width: 300px;height: 30px;" required><br>
+		     <br><input type="password" id ="txtcpw"  name="txtcpw"class="form-control" placeholder="Confirm password" style="width: 300px;height: 30px;" required><br>
+
+              <br><select name="role" id="role" style="width: 300px;height: 30px;">
+                <option value="Admin">Admin</option>
+                <option value="User">User</option>
+                
+                </select>
+                <br>
+                <br>
+                <br>
+                <br>
+		    
+		     
+		       <button class="button"  name="btnlogin" >Registor</button><br><br>
+             <a href="{{url_for('Message')}}" class="send-message-link">Send Message</a>
+
+             <p>    </p>
+             <a href="{{url_for('Read')}}"class="send-message-link">View Message</a><br>
+
+             <br><br><br>
+
+                  {% if mesage is defined and mesage %}
+                           <div class ="message">{{mesage}}</div>
+                        {% endif %}
+		
+
+	      </form>
+	   </div>
+	<div class="col"> </div>
+	</div>
+
+
+
+</body>
+</html>
